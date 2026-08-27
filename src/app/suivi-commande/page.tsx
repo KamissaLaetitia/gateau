@@ -51,25 +51,25 @@ function SuiviCommandeContent() {
     <div className="bg-caffeine-dark min-h-screen pb-24">
       
       {/* Top Banner */}
-      <div className="bg-caffeine-darker border-b border-caffeine-cardBorder py-12 px-4 text-center relative">
+      <div className="bg-caffeine-darker border-b border-caffeine-cardBorder py-8 sm:py-12 px-4 text-center relative">
         <div className="max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-caffeine-gold/10 border border-caffeine-gold/30 text-caffeine-gold text-xs font-bold uppercase tracking-wider mb-3">
             <Truck className="w-3.5 h-3.5" />
             <span>Suivi Logistique & Laboratoire</span>
           </div>
-          <h1 className="font-display font-black text-3xl sm:text-4xl text-caffeine-cream">
+          <h1 className="font-display font-black text-2xl sm:text-4xl text-caffeine-cream">
             Suivi de Votre <span className="gold-gradient-text">Commande en Direct</span>
           </h1>
-          <p className="text-caffeine-subtle text-sm mt-3 max-w-md mx-auto">
+          <p className="text-caffeine-subtle text-xs sm:text-sm mt-2 sm:mt-3 max-w-md mx-auto">
             Entrez votre numéro de commande pour connaître l&apos;état exact de confection et de livraison.
           </p>
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-10">
         
         {/* Search Order Form */}
-        <div className="p-6 sm:p-8 rounded-3xl bg-white border border-caffeine-cardBorder shadow-[0_8px_30px_rgba(180,130,80,0.08)] mb-10">
+        <div className="p-4 sm:p-8 rounded-2xl sm:rounded-3xl bg-white border border-caffeine-cardBorder shadow-[0_8px_30px_rgba(180,130,80,0.08)] mb-8 sm:mb-10">
           <form
             onSubmit={(e) => {
               e.preventDefault();
