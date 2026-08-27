@@ -53,24 +53,24 @@ export const ProductQuickView: React.FC<ProductQuickViewProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/60 backdrop-blur-md animate-fade-in">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2.5 sm:p-4 md:p-6 bg-black/60 backdrop-blur-md animate-fade-in">
       <div
-        className="relative w-full max-w-3xl bg-white border border-caffeine-cardBorder rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.18)] animate-slide-up flex flex-col max-h-[90vh]"
+        className="relative w-full max-w-3xl bg-white border border-caffeine-cardBorder rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.18)] animate-slide-up flex flex-col max-h-[92vh] sm:max-h-[90vh]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-20 p-2 rounded-full bg-white/90 border border-caffeine-cardBorder text-caffeine-cream hover:text-caffeine-gold hover:bg-white transition-colors shadow-sm"
+          className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 p-2 rounded-full bg-white/90 border border-caffeine-cardBorder text-caffeine-cream hover:text-caffeine-gold hover:bg-white transition-colors shadow-sm"
           aria-label="Fermer"
         >
-          <X className="w-5 h-5" />
+          <X className="w-4 h-4 sm:w-5 sm:h-5" />
         </button>
 
         <div className="grid grid-cols-1 md:grid-cols-2 overflow-y-auto">
           
           {/* Left Column: Product Image & Highlights */}
-          <div className="relative bg-caffeine-surface aspect-square md:aspect-auto min-h-[260px] md:min-h-full">
+          <div className="relative bg-caffeine-surface aspect-[4/3] sm:aspect-square md:aspect-auto min-h-[200px] sm:min-h-[260px] md:min-h-full">
             {!imgError ? (
               <img
                 src={product.imageUrl}
@@ -81,24 +81,24 @@ export const ProductQuickView: React.FC<ProductQuickViewProps> = ({
               />
             ) : (
               <div className="w-full h-full bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100 flex flex-col items-center justify-center gap-3">
-                <span className="text-6xl">🎂</span>
-                <span className="text-sm font-semibold text-amber-700/70 text-center px-6">{product.name}</span>
+                <span className="text-5xl sm:text-6xl">🎂</span>
+                <span className="text-xs sm:text-sm font-semibold text-amber-700/70 text-center px-4 sm:px-6">{product.name}</span>
               </div>
             )}
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
 
-            <div className="absolute bottom-4 inset-x-4 p-3 rounded-xl glass-panel text-xs text-caffeine-cream flex items-center justify-between shadow-md">
+            <div className="absolute bottom-3 inset-x-3 sm:bottom-4 sm:inset-x-4 p-2.5 sm:p-3 rounded-xl glass-panel text-[11px] sm:text-xs text-caffeine-cream flex items-center justify-between shadow-md">
               <span className="flex items-center gap-1.5 text-caffeine-gold font-bold">
-                <Clock className="w-3.5 h-3.5" /> Préparé en {product.preparationTimeHours}h
+                <Clock className="w-3.5 h-3.5 shrink-0" /> Préparé en {product.preparationTimeHours}h
               </span>
               <span className="flex items-center gap-1.5 text-green-600 font-medium">
-                <ShieldCheck className="w-3.5 h-3.5" /> 100% Frais
+                <ShieldCheck className="w-3.5 h-3.5 shrink-0" /> 100% Frais
               </span>
             </div>
           </div>
 
           {/* Right Column: Customization Options */}
-          <div className="p-6 sm:p-8 flex flex-col justify-between">
+          <div className="p-4 sm:p-6 md:p-8 flex flex-col justify-between">
             <div>
               {/* Category & Rating */}
               <div className="flex items-center justify-between text-xs text-caffeine-subtle mb-2">
@@ -106,30 +106,30 @@ export const ProductQuickView: React.FC<ProductQuickViewProps> = ({
                   {product.categoryName}
                 </span>
                 <div className="flex items-center gap-1 text-caffeine-gold">
-                  <Star className="w-3.5 h-3.5 fill-caffeine-gold" />
+                  <Star className="w-3.5 h-3.5 fill-caffeine-gold shrink-0" />
                   <span className="font-bold text-caffeine-cream">{product.rating}</span>
-                  <span className="text-caffeine-subtle">({product.reviewsCount} avis)</span>
+                  <span className="text-caffeine-subtle text-[11px]">({product.reviewsCount} avis)</span>
                 </div>
               </div>
 
               {/* Title */}
-              <h2 className="font-display font-black text-xl sm:text-2xl text-caffeine-cream mb-2">
+              <h2 className="font-display font-black text-lg sm:text-2xl text-caffeine-cream mb-1.5 sm:mb-2">
                 {product.name}
               </h2>
 
               {/* Tagline */}
-              <p className="text-xs text-caffeine-subtle leading-relaxed mb-6">
+              <p className="text-xs text-caffeine-subtle leading-relaxed mb-4 sm:mb-6">
                 {product.description}
               </p>
 
               {/* 1. Portions Selector */}
               {product.portions && product.portions.length > 1 && (
-                <div className="mb-5">
+                <div className="mb-4 sm:mb-5">
                   <label className="block text-xs font-bold uppercase tracking-wider text-caffeine-cream mb-2 flex items-center gap-1.5">
-                    <Users className="w-3.5 h-3.5 text-caffeine-gold" />
+                    <Users className="w-3.5 h-3.5 text-caffeine-gold shrink-0" />
                     <span>Nombre de parts :</span>
                   </label>
-                  <div className="grid grid-cols-4 gap-2">
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 sm:gap-2">
                     {product.portions.map((portion) => (
                       <button
                         key={portion}
@@ -149,9 +149,9 @@ export const ProductQuickView: React.FC<ProductQuickViewProps> = ({
               )}
 
               {/* 2. Custom Inscription on Cake */}
-              <div className="mb-5">
+              <div className="mb-4 sm:mb-5">
                 <label className="block text-xs font-bold uppercase tracking-wider text-caffeine-cream mb-1.5 flex items-center gap-1.5">
-                  <Sparkles className="w-3.5 h-3.5 text-caffeine-gold" />
+                  <Sparkles className="w-3.5 h-3.5 text-caffeine-gold shrink-0" />
                   <span>Message sur plaque chocolat (Offert) :</span>
                 </label>
                 <input
@@ -160,7 +160,7 @@ export const ProductQuickView: React.FC<ProductQuickViewProps> = ({
                   placeholder="Ex : Joyeux Anniversaire Sarah ! (Optionnel)"
                   value={customMessage}
                   onChange={(e) => setCustomMessage(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl bg-caffeine-surface border border-caffeine-cardBorder text-xs text-caffeine-cream placeholder:text-caffeine-muted focus:outline-none focus:border-caffeine-gold focus:bg-white shadow-sm transition-all"
+                  className="w-full px-3.5 py-2 sm:py-2.5 rounded-xl bg-caffeine-surface border border-caffeine-cardBorder text-xs text-caffeine-cream placeholder:text-caffeine-muted focus:outline-none focus:border-caffeine-gold focus:bg-white shadow-sm transition-all"
                 />
                 <span className="text-[10px] text-caffeine-muted block mt-1">
                   Écrit à la main au cornet de chocolat noir par nos chefs.
@@ -168,7 +168,7 @@ export const ProductQuickView: React.FC<ProductQuickViewProps> = ({
               </div>
 
               {/* 3. Optional Candles & Quantity */}
-              <div className="flex items-center justify-between gap-4 mb-6">
+              <div className="flex flex-wrap items-center justify-between gap-3 mb-5 sm:mb-6">
                 <div className="flex items-center gap-2">
                   <span className="text-xs font-bold text-caffeine-cream">Quantité :</span>
                   <div className="flex items-center border border-caffeine-cardBorder rounded-lg bg-caffeine-surface shadow-sm">
@@ -194,7 +194,7 @@ export const ProductQuickView: React.FC<ProductQuickViewProps> = ({
                   <span className="text-[10px] uppercase tracking-wider text-caffeine-subtle block">
                     Total
                   </span>
-                  <span className="text-xl font-black text-caffeine-gold font-display">
+                  <span className="text-lg sm:text-xl font-black text-caffeine-gold font-display">
                     {formatPrice(totalPrice)}
                   </span>
                 </div>
