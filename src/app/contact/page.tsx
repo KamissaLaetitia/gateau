@@ -28,29 +28,29 @@ export default function ContactPage() {
     <div className="bg-caffeine-dark min-h-screen pb-24">
       
       {/* Top Banner */}
-      <div className="bg-caffeine-darker border-b border-caffeine-cardBorder py-14 px-4 text-center relative">
+      <div className="bg-caffeine-darker border-b border-caffeine-cardBorder py-8 sm:py-14 px-4 text-center relative">
         <div className="max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-caffeine-gold/10 border border-caffeine-gold/30 text-caffeine-gold text-xs font-bold uppercase tracking-wider mb-3">
             <MessageSquare className="w-3.5 h-3.5" />
             <span>Service Client & Boutiques</span>
           </div>
-          <h1 className="font-display font-black text-3xl sm:text-5xl text-caffeine-cream">
+          <h1 className="font-display font-black text-2xl sm:text-4xl lg:text-5xl text-caffeine-cream">
             Contactez Notre <span className="gold-gradient-text">Maison de Pâtisserie</span>
           </h1>
-          <p className="text-caffeine-subtle text-sm sm:text-base mt-3 max-w-lg mx-auto">
+          <p className="text-caffeine-subtle text-xs sm:text-base mt-2 sm:mt-3 max-w-lg mx-auto">
             Une question sur un gâteau, un ingrédient ou une livraison spéciale ? Notre équipe vous répond avec attention.
           </p>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10">
           
           {/* Left Column: Contact Info & Locations (5 cols) */}
           <div className="lg:col-span-5 space-y-6">
             
             {/* Quick Contact Box */}
-            <div className="p-8 rounded-3xl bg-white border border-caffeine-cardBorder shadow-[0_8px_30px_rgba(180,130,80,0.08)] space-y-6">
+            <div className="p-5 sm:p-8 rounded-2xl sm:rounded-3xl bg-white border border-caffeine-cardBorder shadow-[0_8px_30px_rgba(180,130,80,0.08)] space-y-6">
               <h2 className="font-display font-black text-xl text-caffeine-cream">
                 Nos Coordonnées
               </h2>
