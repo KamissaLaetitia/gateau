@@ -118,7 +118,7 @@ export const HeroSection = () => {
                     </span>
                   </div>
                   <button
-                    onClick={() => addItem(signatureCake)}
+                    onClick={() => signatureCake && addItem(signatureCake)}
                     className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-caffeine-gold to-caffeine-goldHover text-white font-black text-xs hover:scale-105 transition-all shadow-gold-sm"
                   >
                     28 000 FCFA
