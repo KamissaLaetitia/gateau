@@ -221,18 +221,18 @@ export default function ProductDetailPage() {
 
               {/* 1. Portions Selector */}
               {product.portions && product.portions.length > 1 && (
-                <div className="mb-6">
-                  <label className="block text-xs font-bold uppercase tracking-wider text-caffeine-cream mb-2.5 flex items-center gap-2">
-                    <Users className="w-4 h-4 text-caffeine-gold" />
+                <div className="mb-5 sm:mb-6">
+                  <label className="block text-xs font-bold uppercase tracking-wider text-caffeine-cream mb-2 sm:mb-2.5 flex items-center gap-2">
+                    <Users className="w-4 h-4 text-caffeine-gold shrink-0" />
                     <span>Sélectionnez le format (Nombre de convives) :</span>
                   </label>
-                  <div className="grid grid-cols-4 gap-3">
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
                     {product.portions.map((portion) => (
                       <button
                         key={portion}
                         type="button"
                         onClick={() => setSelectedPortions(portion)}
-                        className={`py-3 px-2 rounded-2xl text-xs font-bold border transition-all text-center flex flex-col items-center justify-center ${
+                        className={`py-2.5 sm:py-3 px-2 rounded-2xl text-xs font-bold border transition-all text-center flex flex-col items-center justify-center ${
                           selectedPortions === portion
                             ? 'bg-caffeine-gold text-white border-caffeine-gold shadow-gold-sm'
                             : 'bg-white border-caffeine-cardBorder text-caffeine-cream hover:border-caffeine-gold/50 shadow-sm'
@@ -247,9 +247,9 @@ export default function ProductDetailPage() {
               )}
 
               {/* 2. Custom Inscription on Cake */}
-              <div className="mb-6">
+              <div className="mb-5 sm:mb-6">
                 <label className="block text-xs font-bold uppercase tracking-wider text-caffeine-cream mb-2 flex items-center gap-2">
-                  <Sparkles className="w-4 h-4 text-caffeine-gold" />
+                  <Sparkles className="w-4 h-4 text-caffeine-gold shrink-0" />
                   <span>Personnalisation sur plaque chocolat (Offerte) :</span>
                 </label>
                 <input
@@ -258,12 +258,12 @@ export default function ProductDetailPage() {
                   placeholder="Ex : Joyeux Anniversaire Lucas ! (Optionnel)"
                   value={customMessage}
                   onChange={(e) => setCustomMessage(e.target.value)}
-                  className="w-full px-4 py-3 rounded-2xl bg-caffeine-surface border border-caffeine-cardBorder text-xs sm:text-sm text-caffeine-cream placeholder:text-caffeine-muted focus:outline-none focus:border-caffeine-gold focus:bg-white shadow-sm transition-all"
+                  className="w-full px-4 py-2.5 sm:py-3 rounded-2xl bg-caffeine-surface border border-caffeine-cardBorder text-xs sm:text-sm text-caffeine-cream placeholder:text-caffeine-muted focus:outline-none focus:border-caffeine-gold focus:bg-white shadow-sm transition-all"
                 />
               </div>
 
               {/* 3. Quantity & Add to Cart */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4 border-t border-caffeine-cardBorder">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-4 border-t border-caffeine-cardBorder">
                 
                 {/* Quantity adjuster */}
                 <div className="flex items-center justify-between border border-caffeine-cardBorder rounded-2xl bg-caffeine-surface p-2 px-3 sm:w-36 shadow-sm">
@@ -291,7 +291,7 @@ export default function ProductDetailPage() {
                 <button
                   type="button"
                   onClick={handleAddToCart}
-                  className={`flex-1 py-4 rounded-full font-bold text-sm sm:text-base flex items-center justify-center gap-3 transition-all shadow-gold-md ${
+                  className={`flex-1 py-3.5 sm:py-4 rounded-full font-bold text-sm sm:text-base flex items-center justify-center gap-2.5 sm:gap-3 transition-all shadow-gold-md ${
                     addedSuccess
                       ? 'bg-green-500 text-white'
                       : 'btn-caffeine-primary'
@@ -299,12 +299,12 @@ export default function ProductDetailPage() {
                 >
                   {addedSuccess ? (
                     <>
-                      <Check className="w-5 h-5" />
+                      <Check className="w-5 h-5 shrink-0" />
                       <span>Ajouté au panier !</span>
                     </>
                   ) : (
                     <>
-                      <ShoppingBag className="w-5 h-5" />
+                      <ShoppingBag className="w-5 h-5 shrink-0" />
                       <span>Commander • {formatPrice(totalPrice)}</span>
                     </>
                   )}
