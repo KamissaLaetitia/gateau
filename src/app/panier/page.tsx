@@ -578,11 +578,11 @@ export default function CartAndCheckoutPage() {
                 </div>
 
                 {/* Form Buttons */}
-                <div className="flex items-center justify-between gap-4 pt-4">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-4">
                   <button
                     type="button"
                     onClick={() => setStep(1)}
-                    className="btn-caffeine-secondary text-xs !py-3 !px-6 shadow-sm"
+                    className="btn-caffeine-secondary text-xs !py-3 !px-6 shadow-sm order-2 sm:order-1 text-center"
                   >
                     ← Modifier le Panier
                   </button>
@@ -590,9 +590,9 @@ export default function CartAndCheckoutPage() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="btn-caffeine-primary text-sm !py-4 !px-10 shadow-gold-md flex items-center gap-2"
+                    className="btn-caffeine-primary text-xs sm:text-sm !py-3.5 sm:!py-4 !px-6 sm:!px-10 shadow-gold-md flex items-center justify-center gap-2 order-1 sm:order-2 text-center"
                   >
-                    <Sparkles className="w-4 h-4" />
+                    <Sparkles className="w-4 h-4 shrink-0" />
                     <span>Confirmer & Payer ({formatPrice(total)})</span>
                   </button>
                 </div>
