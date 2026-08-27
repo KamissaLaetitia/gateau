@@ -213,24 +213,24 @@ export default function AdminDashboardPage() {
     <div className="bg-caffeine-dark min-h-screen pb-24">
       
       {/* Admin Header */}
-      <div className="bg-caffeine-darker border-b border-caffeine-cardBorder py-8 px-4 sm:px-6 lg:px-8">
+      <div className="bg-caffeine-darker border-b border-caffeine-cardBorder py-6 sm:py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-caffeine-gold/10 border border-caffeine-gold/30 text-caffeine-gold text-xs font-bold uppercase tracking-wider mb-2">
               <Sparkles className="w-3 h-3" />
               <span>Back-Office de Gestion</span>
             </div>
-            <h1 className="font-display font-black text-2xl sm:text-3xl text-caffeine-cream">
+            <h1 className="font-display font-black text-xl sm:text-3xl text-caffeine-cream">
               Espace Vendeuse & <span className="gold-gradient-text">Administration</span>
             </h1>
           </div>
 
           {/* Quick Tab Selector & Logout */}
-          <div className="flex items-center gap-3">
-            <div className="flex items-center gap-2 bg-white border border-caffeine-cardBorder p-1.5 rounded-2xl shadow-sm">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+            <div className="flex flex-wrap items-center gap-1 sm:gap-2 bg-white border border-caffeine-cardBorder p-1 sm:p-1.5 rounded-2xl shadow-sm">
               <button
                 onClick={() => setActiveTab('overview')}
-                className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all ${
+                className={`px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-xl text-xs font-bold transition-all ${
                   activeTab === 'overview'
                     ? 'bg-caffeine-gold text-white font-black shadow-gold-sm'
                     : 'text-caffeine-cream/80 hover:text-caffeine-gold'
@@ -240,7 +240,7 @@ export default function AdminDashboardPage() {
               </button>
               <button
                 onClick={() => setActiveTab('products')}
-                className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all ${
+                className={`px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-xl text-xs font-bold transition-all ${
                   activeTab === 'products'
                     ? 'bg-caffeine-gold text-white font-black shadow-gold-sm'
                     : 'text-caffeine-cream/80 hover:text-caffeine-gold'
@@ -250,7 +250,7 @@ export default function AdminDashboardPage() {
               </button>
               <button
                 onClick={() => setActiveTab('orders')}
-                className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all ${
+                className={`px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-xl text-xs font-bold transition-all ${
                   activeTab === 'orders'
                     ? 'bg-caffeine-gold text-white font-black shadow-gold-sm'
                     : 'text-caffeine-cream/80 hover:text-caffeine-gold'
@@ -262,7 +262,7 @@ export default function AdminDashboardPage() {
 
             <button
               onClick={handleLogout}
-              className="p-2.5 rounded-2xl bg-white border border-caffeine-cardBorder hover:border-red-500 text-caffeine-subtle hover:text-red-600 transition-all shadow-sm flex items-center gap-1.5 text-xs font-bold"
+              className="p-2 sm:p-2.5 rounded-2xl bg-white border border-caffeine-cardBorder hover:border-red-500 text-caffeine-subtle hover:text-red-600 transition-all shadow-sm flex items-center gap-1.5 text-xs font-bold shrink-0"
               title="Déconnexion sécurisée"
             >
               <LogOut className="w-4 h-4" />
