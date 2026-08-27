@@ -41,32 +41,32 @@ export default function CustomCakePage() {
     <div className="bg-caffeine-dark min-h-screen pb-24">
       
       {/* Top Banner */}
-      <div className="bg-caffeine-darker border-b border-caffeine-cardBorder py-14 px-4 text-center relative overflow-hidden">
+      <div className="bg-caffeine-darker border-b border-caffeine-cardBorder py-8 sm:py-14 px-4 text-center relative overflow-hidden">
         <div className="max-w-3xl mx-auto relative z-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-caffeine-gold/10 border border-caffeine-gold/30 text-caffeine-gold text-xs font-bold uppercase tracking-wider mb-3">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Atelier de Haute Création</span>
           </div>
-          <h1 className="font-display font-black text-3xl sm:text-5xl text-caffeine-cream">
+          <h1 className="font-display font-black text-2xl sm:text-4xl lg:text-5xl text-caffeine-cream">
             Votre Gâteau, Votre Occasion, <span className="gold-gradient-text">Votre Style.</span>
           </h1>
-          <p className="text-caffeine-subtle text-sm sm:text-base mt-3 max-w-xl mx-auto">
+          <p className="text-caffeine-subtle text-xs sm:text-base mt-2 sm:mt-3 max-w-xl mx-auto">
             Pièces d&apos;art uniques pour mariages, anniversaires spectaculaires et événements d&apos;entreprise. Devis gratuit et réponse sous 2 heures.
           </p>
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-12">
         
         {submitted ? (
-          <div className="p-10 sm:p-14 rounded-3xl bg-white border border-caffeine-gold/50 text-center space-y-6 shadow-[0_16px_40px_rgba(180,130,80,0.14)] animate-fade-in">
+          <div className="p-6 sm:p-14 rounded-2xl sm:rounded-3xl bg-white border border-caffeine-gold/50 text-center space-y-6 shadow-[0_16px_40px_rgba(180,130,80,0.14)] animate-fade-in">
             <div className="w-16 h-16 rounded-full bg-caffeine-gold/20 border border-caffeine-gold flex items-center justify-center mx-auto text-caffeine-gold shadow-gold-sm">
               <CheckCircle2 className="w-8 h-8" />
             </div>
-            <h2 className="font-display font-black text-2xl sm:text-3xl text-caffeine-cream">
+            <h2 className="font-display font-black text-xl sm:text-3xl text-caffeine-cream">
               Demande de Devis Transmise avec Succès !
             </h2>
-            <p className="text-sm text-caffeine-subtle max-w-md mx-auto leading-relaxed">
+            <p className="text-xs sm:text-sm text-caffeine-subtle max-w-md mx-auto leading-relaxed">
               Notre chef pâtissier créatif étudie votre projet et vous recontactera par email ou téléphone dans les plus brefs délais avec une proposition détaillée.
             </p>
             <button
@@ -77,10 +77,10 @@ export default function CustomCakePage() {
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
             
             {/* Form Column (8 cols) */}
-            <div className="lg:col-span-8 p-6 sm:p-10 rounded-3xl bg-white border border-caffeine-cardBorder shadow-[0_10px_35px_rgba(180,130,80,0.08)] space-y-6">
+            <div className="lg:col-span-8 p-4 sm:p-10 rounded-2xl sm:rounded-3xl bg-white border border-caffeine-cardBorder shadow-[0_10px_35px_rgba(180,130,80,0.08)] space-y-6">
               
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
                 
