@@ -65,16 +65,16 @@ function CatalogueContent() {
     <div className="bg-caffeine-dark min-h-screen pb-24">
       
       {/* Top Banner */}
-      <div className="bg-caffeine-darker border-b border-caffeine-cardBorder py-12 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
+      <div className="bg-caffeine-darker border-b border-caffeine-cardBorder py-8 sm:py-12 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
         <div className="max-w-3xl mx-auto relative z-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-caffeine-gold/10 border border-caffeine-gold/30 text-caffeine-gold text-xs font-bold uppercase tracking-wider mb-3">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Catalogue Gourmand Complet</span>
           </div>
-          <h1 className="font-display font-black text-3xl sm:text-5xl text-caffeine-cream">
+          <h1 className="font-display font-black text-2xl sm:text-4xl lg:text-5xl text-caffeine-cream">
             Nos Gâteaux & <span className="gold-gradient-text">Créations d&apos;Exception</span>
           </h1>
-          <p className="text-caffeine-subtle text-sm sm:text-base mt-3 max-w-xl mx-auto">
+          <p className="text-caffeine-subtle text-xs sm:text-base mt-2 sm:mt-3 max-w-xl mx-auto">
             Découvrez nos recettes artisanales préparées sur commande avec des ingrédients 100% nobles.
           </p>
         </div>
@@ -83,10 +83,10 @@ function CatalogueContent() {
       <SloganTicker />
 
       {/* Main Catalogue Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-10">
         
         {/* Search & Sort Controls Bar */}
-        <div className="p-4 sm:p-5 rounded-2xl bg-white border border-caffeine-cardBorder shadow-[0_4px_20px_rgba(180,130,80,0.07)] mb-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="p-3.5 sm:p-5 rounded-2xl bg-white border border-caffeine-cardBorder shadow-[0_4px_20px_rgba(180,130,80,0.07)] mb-6 sm:mb-8 flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4">
           
           {/* Search Input */}
           <div className="relative w-full md:w-96">
