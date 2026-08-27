@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ShoppingBag, Menu, X, Sparkles, Search } from 'lucide-react';
+import { ShoppingBag, Menu, X, Sparkles, Search, Clock, ShieldCheck } from 'lucide-react';
 import { useCartStore } from '@/store/useCartStore';
 import { formatPrice } from '@/lib/utils';
 
@@ -42,6 +42,31 @@ export const Navbar = () => {
 
   return (
     <>
+      {/* Top Notification Announcement Bar */}
+      <div className="bg-caffeine-darker border-b border-caffeine-cardBorder py-1.5 px-3 sm:px-4 text-[11px] sm:text-xs text-caffeine-cream w-full max-w-full">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2 overflow-hidden text-ellipsis whitespace-nowrap">
+            <span className="px-2 py-0.5 rounded-full bg-caffeine-gold/20 text-caffeine-gold font-extrabold text-[9px] sm:text-[10px] uppercase tracking-wide shrink-0">
+              OFFRE SPÉCIALE
+            </span>
+            <span className="text-caffeine-cream font-medium text-[11px] sm:text-xs truncate">
+              Livraison offerte dès 30 000 FCFA avec le code <strong className="text-caffeine-gold font-bold">GOURMAND20</strong> (-20%)
+            </span>
+          </div>
+          <div className="hidden md:flex items-center gap-4 text-caffeine-subtle text-xs shrink-0">
+            <span className="flex items-center gap-1.5">
+              <Clock className="w-3.5 h-3.5 text-caffeine-gold" />
+              Commandes expédiées fraîches 7j/7
+            </span>
+            <span className="text-caffeine-cardBorder">|</span>
+            <Link href="/admin" className="flex items-center gap-1.5 hover:text-caffeine-gold transition-colors font-medium">
+              <ShieldCheck className="w-3.5 h-3.5 text-caffeine-gold" />
+              Espace Admin
+            </Link>
+          </div>
+        </div>
+      </div>
+
       {/* Main Navigation Header */}
       <header
         className={`sticky top-0 z-40 transition-all duration-300 w-full max-w-full ${
@@ -68,16 +93,16 @@ export const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center lg:gap-0.5 xl:gap-1.5 2xl:gap-2">
+          <nav className="hidden lg:flex items-center lg:gap-1 xl:gap-2">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`lg:px-2 xl:px-3 py-1.5 rounded-full lg:text-xs xl:text-sm font-medium transition-all ${
+                  className={`px-3 py-1.5 rounded-full text-xs xl:text-sm font-medium transition-all ${
                     isActive
-                      ? 'text-caffeine-gold bg-caffeine-gold/15 font-bold shadow-sm'
+                      ? 'text-caffeine-gold bg-caffeine-surface border border-caffeine-gold/30 font-bold shadow-sm'
                       : 'text-caffeine-cream/80 hover:text-caffeine-gold hover:bg-caffeine-surface'
                   }`}
                 >
@@ -139,37 +164,44 @@ export const Navbar = () => {
 
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className="lg:hidden fixed inset-x-0 top-full bg-white/98 backdrop-blur-2xl border-b border-caffeine-cardBorder p-4 sm:p-6 shadow-2xl animate-slide-up z-50 max-h-[calc(100vh-70px)] overflow-y-auto">
-            <div className="flex flex-col gap-2 sm:gap-3">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl text-sm sm:text-base font-medium text-caffeine-cream hover:text-caffeine-gold hover:bg-caffeine-surface transition-colors flex items-center justify-between"
-                >
-                  <span>{link.name}</span>
-                  <span className="text-caffeine-gold font-bold">→</span>
-                </Link>
-              ))}
-              <div className="pt-3 sm:pt-4 border-t border-caffeine-cardBorder flex flex-col gap-2.5 sm:gap-3">
-                <Link
-                  href="/catalogue"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="btn-caffeine-primary w-full text-center !py-3 text-sm"
-                >
-                  Explorer le Catalogue de Gâteaux
-                </Link>
-                <Link
-                  href="/admin"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="btn-caffeine-secondary w-full text-center text-xs !py-2.5"
-                >
-                  Accéder à l&apos;Administration
-                </Link>
+          <>
+            {/* Backdrop */}
+            <div
+              onClick={() => setMobileMenuOpen(false)}
+              className="lg:hidden fixed inset-0 top-[100px] bg-black/30 backdrop-blur-sm z-40 animate-fade-in"
+            />
+            <div className="lg:hidden fixed inset-x-0 top-full bg-white/98 backdrop-blur-2xl border-b border-caffeine-cardBorder p-4 sm:p-6 shadow-2xl animate-slide-up z-50 max-h-[calc(100vh-70px)] overflow-y-auto">
+              <div className="flex flex-col gap-2 sm:gap-3">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl text-sm sm:text-base font-medium text-caffeine-cream hover:text-caffeine-gold hover:bg-caffeine-surface transition-colors flex items-center justify-between"
+                  >
+                    <span>{link.name}</span>
+                    <span className="text-caffeine-gold font-bold">→</span>
+                  </Link>
+                ))}
+                <div className="pt-3 sm:pt-4 border-t border-caffeine-cardBorder flex flex-col gap-2.5 sm:gap-3">
+                  <Link
+                    href="/catalogue"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="btn-caffeine-primary w-full text-center !py-3 text-sm"
+                  >
+                    Explorer le Catalogue de Gâteaux
+                  </Link>
+                  <Link
+                    href="/admin"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="btn-caffeine-secondary w-full text-center text-xs !py-2.5"
+                  >
+                    Accéder à l&apos;Administration
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
+          </>
         )}
       </header>
     </>
