@@ -44,7 +44,7 @@ export const Navbar = () => {
     <>
       {/* Main Navigation Header */}
       <header
-        className={`sticky top-0 z-40 transition-all duration-300 ${
+        className={`sticky top-0 z-40 transition-all duration-300 w-full max-w-full ${
           isScrolled
             ? 'glass-nav py-3 shadow-md shadow-black/5'
             : 'bg-white/95 backdrop-blur-md border-b border-caffeine-cardBorder py-4 shadow-sm shadow-black/[0.03]'
@@ -53,7 +53,7 @@ export const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center gap-3 group shrink-0">
             <div className="w-10 h-10 rounded-full bg-gradient-to-br from-caffeine-gold to-caffeine-goldHover flex items-center justify-center shadow-gold-sm group-hover:scale-105 transition-transform shadow-md">
               <Sparkles className="w-5 h-5 text-white" />
             </div>
@@ -68,14 +68,14 @@ export const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
+          <nav className="hidden lg:flex items-center lg:gap-0.5 xl:gap-1.5 2xl:gap-2">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${
+                  className={`lg:px-2 xl:px-3 py-1.5 rounded-full lg:text-xs xl:text-sm font-medium transition-all ${
                     isActive
                       ? 'text-caffeine-gold bg-caffeine-gold/15 font-bold shadow-sm'
                       : 'text-caffeine-cream/80 hover:text-caffeine-gold hover:bg-caffeine-surface'
@@ -88,7 +88,7 @@ export const Navbar = () => {
           </nav>
 
           {/* Right Action Icons */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             
             {/* Search Link */}
             <Link
@@ -139,7 +139,7 @@ export const Navbar = () => {
 
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className="lg:hidden fixed inset-x-0 top-full bg-white/98 backdrop-blur-2xl border-b border-caffeine-cardBorder p-6 shadow-2xl animate-slide-up z-50">
+          <div className="lg:hidden fixed inset-x-0 top-full bg-white/98 backdrop-blur-2xl border-b border-caffeine-cardBorder p-6 shadow-2xl animate-slide-up z-50 max-h-[calc(100vh-80px)] overflow-y-auto">
             <div className="flex flex-col gap-3">
               {navLinks.map((link) => (
                 <Link
@@ -165,7 +165,7 @@ export const Navbar = () => {
                   onClick={() => setMobileMenuOpen(false)}
                   className="btn-caffeine-secondary w-full text-center text-xs"
                 >
-                  Accéder à l'Administration
+                  Accéder à l&apos;Administration
                 </Link>
               </div>
             </div>
