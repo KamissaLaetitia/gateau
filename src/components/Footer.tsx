@@ -18,16 +18,16 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="bg-caffeine-darker border-t border-caffeine-cardBorder pt-16 pb-10 text-caffeine-cream">
+    <footer className="bg-caffeine-darker border-t border-caffeine-cardBorder pt-12 sm:pt-16 pb-8 sm:pb-10 text-caffeine-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Top Newsletter & Slogan Callout (Style Caffeine X) */}
-        <div className="p-8 sm:p-10 rounded-3xl bg-white border border-caffeine-gold/35 shadow-[0_12px_40px_rgba(180,130,80,0.1)] mb-16 flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div className="p-5 sm:p-10 rounded-2xl sm:rounded-3xl bg-white border border-caffeine-gold/35 shadow-[0_12px_40px_rgba(180,130,80,0.1)] mb-10 sm:mb-16 flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8">
           <div className="max-w-xl text-center lg:text-left">
             <span className="text-xs uppercase font-bold text-caffeine-gold tracking-widest block mb-2">
               Le Club Privilège Gourmand
             </span>
-            <h2 className="font-display font-black text-2xl sm:text-3xl text-caffeine-cream">
+            <h2 className="font-display font-black text-xl sm:text-3xl text-caffeine-cream">
               Recevez nos créations éphémères & -15% sur votre première commande
             </h2>
             <p className="text-xs sm:text-sm text-caffeine-subtle mt-2">
@@ -42,11 +42,11 @@ export const Footer = () => {
               placeholder="Votre adresse email..."
               value={newsletterEmail}
               onChange={(e) => setNewsletterEmail(e.target.value)}
-              className="flex-1 px-4 py-3.5 rounded-full bg-caffeine-surface border border-caffeine-cardBorder text-xs text-caffeine-cream placeholder:text-caffeine-muted focus:outline-none focus:border-caffeine-gold focus:bg-white shadow-sm transition-all"
+              className="flex-1 px-4 py-3 sm:py-3.5 rounded-full bg-caffeine-surface border border-caffeine-cardBorder text-xs text-caffeine-cream placeholder:text-caffeine-muted focus:outline-none focus:border-caffeine-gold focus:bg-white shadow-sm transition-all"
             />
             <button
               type="submit"
-              className="btn-caffeine-primary text-xs !py-3.5 !px-6 flex items-center justify-center gap-2 whitespace-nowrap shadow-sm hover:shadow-md"
+              className="btn-caffeine-primary text-xs !py-3 sm:!py-3.5 !px-6 flex items-center justify-center gap-2 whitespace-nowrap shadow-sm hover:shadow-md"
             >
               <span>{subscribed ? 'Inscrit avec succès !' : 'S\'inscrire'}</span>
               <Send className="w-3.5 h-3.5" />
@@ -55,7 +55,7 @@ export const Footer = () => {
         </div>
 
         {/* Multi-Column Main Footer Links (Caffeine X Structure) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10 mb-10 sm:mb-14">
           
           {/* Column 1: Brand Info */}
           <div className="lg:col-span-2 space-y-4">
