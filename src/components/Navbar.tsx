@@ -46,22 +46,22 @@ export const Navbar = () => {
       <header
         className={`sticky top-0 z-40 transition-all duration-300 w-full max-w-full ${
           isScrolled
-            ? 'glass-nav py-3 shadow-md shadow-black/5'
-            : 'bg-white/95 backdrop-blur-md border-b border-caffeine-cardBorder py-4 shadow-sm shadow-black/[0.03]'
+            ? 'glass-nav py-2.5 sm:py-3 shadow-md shadow-black/5'
+            : 'bg-white/95 backdrop-blur-md border-b border-caffeine-cardBorder py-3 sm:py-4 shadow-sm shadow-black/[0.03]'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex items-center justify-between">
           
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group shrink-0">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-caffeine-gold to-caffeine-goldHover flex items-center justify-center shadow-gold-sm group-hover:scale-105 transition-transform shadow-md">
-              <Sparkles className="w-5 h-5 text-white" />
+          <Link href="/" className="flex items-center gap-2 sm:gap-3 group shrink-0">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-caffeine-gold to-caffeine-goldHover flex items-center justify-center shadow-gold-sm group-hover:scale-105 transition-transform shadow-md shrink-0">
+              <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
             </div>
             <div className="flex flex-col">
-              <span className="font-display font-black text-lg tracking-wider text-caffeine-cream flex items-center gap-1">
+              <span className="font-display font-black text-sm xs:text-base sm:text-lg tracking-wider text-caffeine-cream flex items-center gap-1">
                 PÂTISSERIE <span className="text-caffeine-gold">ROYALE</span>
               </span>
-              <span className="text-[10px] uppercase tracking-[0.2em] text-caffeine-subtle -mt-1 font-semibold">
+              <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.2em] text-caffeine-subtle -mt-0.5 sm:-mt-1 font-semibold">
                 Haute Gourmandise
               </span>
             </div>
@@ -88,30 +88,30 @@ export const Navbar = () => {
           </nav>
 
           {/* Right Action Icons */}
-          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+          <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
             
             {/* Search Link */}
             <Link
               href="/catalogue"
               aria-label="Rechercher des gâteaux"
-              className="p-2.5 rounded-full text-caffeine-subtle hover:text-caffeine-gold hover:bg-caffeine-surface border border-transparent hover:border-caffeine-cardBorder hover:shadow-sm transition-all hidden sm:flex"
+              className="p-2 sm:p-2.5 rounded-full text-caffeine-subtle hover:text-caffeine-gold hover:bg-caffeine-surface border border-transparent hover:border-caffeine-cardBorder hover:shadow-sm transition-all hidden sm:flex"
             >
-              <Search className="w-5 h-5" />
+              <Search className="w-4 h-4 sm:w-5 sm:h-5" />
             </Link>
 
             {/* Cart Button with Live Counter */}
             <button
               onClick={toggleCart}
               aria-label="Ouvrir le panier"
-              className="relative p-2.5 rounded-full bg-white border border-caffeine-cardBorder hover:border-caffeine-gold/60 text-caffeine-cream hover:text-caffeine-gold transition-all duration-200 group flex items-center gap-2 shadow-sm hover:shadow-md"
+              className="relative p-2 sm:p-2.5 rounded-full bg-white border border-caffeine-cardBorder hover:border-caffeine-gold/60 text-caffeine-cream hover:text-caffeine-gold transition-all duration-200 group flex items-center gap-1.5 sm:gap-2 shadow-sm hover:shadow-md"
             >
-              <ShoppingBag className="w-5 h-5 text-caffeine-gold group-hover:scale-110 transition-transform" />
+              <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5 text-caffeine-gold group-hover:scale-110 transition-transform" />
               {itemsCount > 0 && (
                 <>
                   <span className="hidden sm:inline-block text-xs font-bold text-caffeine-cream pr-1">
                     {formatPrice(subtotal)}
                   </span>
-                  <span className="absolute -top-1.5 -right-1.5 bg-caffeine-gold text-white font-black text-[11px] w-5 h-5 rounded-full flex items-center justify-center shadow-md animate-fade-in">
+                  <span className="absolute -top-1.5 -right-1.5 bg-caffeine-gold text-white font-black text-[10px] sm:text-[11px] w-4 h-4 sm:w-5 sm:h-5 rounded-full flex items-center justify-center shadow-md animate-fade-in">
                     {itemsCount}
                   </span>
                 </>
@@ -121,7 +121,7 @@ export const Navbar = () => {
             {/* Direct CTA button */}
             <Link
               href="/catalogue"
-              className="btn-caffeine-primary text-xs sm:text-sm !py-2.5 !px-5 hidden md:inline-flex"
+              className="btn-caffeine-primary text-xs sm:text-sm !py-2 sm:!py-2.5 !px-4 sm:!px-5 hidden md:inline-flex"
             >
               Commander
             </Link>
@@ -129,41 +129,41 @@ export const Navbar = () => {
             {/* Mobile Menu Trigger */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 rounded-lg text-caffeine-cream hover:text-caffeine-gold hover:bg-caffeine-surface transition-colors"
+              className="lg:hidden p-1.5 sm:p-2 rounded-lg text-caffeine-cream hover:text-caffeine-gold hover:bg-caffeine-surface transition-colors"
               aria-label="Menu mobile"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
             </button>
           </div>
         </div>
 
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className="lg:hidden fixed inset-x-0 top-full bg-white/98 backdrop-blur-2xl border-b border-caffeine-cardBorder p-6 shadow-2xl animate-slide-up z-50 max-h-[calc(100vh-80px)] overflow-y-auto">
-            <div className="flex flex-col gap-3">
+          <div className="lg:hidden fixed inset-x-0 top-full bg-white/98 backdrop-blur-2xl border-b border-caffeine-cardBorder p-4 sm:p-6 shadow-2xl animate-slide-up z-50 max-h-[calc(100vh-70px)] overflow-y-auto">
+            <div className="flex flex-col gap-2 sm:gap-3">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="px-4 py-3 rounded-xl text-base font-medium text-caffeine-cream hover:text-caffeine-gold hover:bg-caffeine-surface transition-colors flex items-center justify-between"
+                  className="px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl text-sm sm:text-base font-medium text-caffeine-cream hover:text-caffeine-gold hover:bg-caffeine-surface transition-colors flex items-center justify-between"
                 >
                   <span>{link.name}</span>
-                  <span className="text-caffeine-gold">→</span>
+                  <span className="text-caffeine-gold font-bold">→</span>
                 </Link>
               ))}
-              <div className="pt-4 border-t border-caffeine-cardBorder flex flex-col gap-3">
+              <div className="pt-3 sm:pt-4 border-t border-caffeine-cardBorder flex flex-col gap-2.5 sm:gap-3">
                 <Link
                   href="/catalogue"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="btn-caffeine-primary w-full text-center"
+                  className="btn-caffeine-primary w-full text-center !py-3 text-sm"
                 >
                   Explorer le Catalogue de Gâteaux
                 </Link>
                 <Link
                   href="/admin"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="btn-caffeine-secondary w-full text-center text-xs"
+                  className="btn-caffeine-secondary w-full text-center text-xs !py-2.5"
                 >
                   Accéder à l&apos;Administration
                 </Link>
