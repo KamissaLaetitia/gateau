@@ -43,10 +43,18 @@ body {
     radial-gradient(circle at 0% 80%, rgba(253, 242, 230, 0.8) 0%, transparent 50%),
     radial-gradient(circle at 70% 100%, rgba(254, 240, 242, 0.6) 0%, transparent 45%);
   background-attachment: fixed;
+  -webkit-tap-highlight-color: transparent;
+  overflow-wrap: break-word;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
+  overflow-wrap: break-word;
 }
 
 /* Custom Luxury Scrollbar */
