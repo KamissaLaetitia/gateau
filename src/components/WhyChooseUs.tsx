@@ -32,27 +32,27 @@ export const WhyChooseUs = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header (Style Caffeine X) */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-caffeine-gold/10 border border-caffeine-gold/30 text-caffeine-gold text-xs font-bold uppercase tracking-wider mb-3">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Excellence & Savoir-Faire</span>
           </div>
-          <h2 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-caffeine-cream">
+          <h2 className="font-display font-extrabold text-2xl sm:text-4xl lg:text-5xl text-caffeine-cream">
             Pourquoi choisir notre <span className="gold-gradient-text">Maison de Haute Pâtisserie ?</span>
           </h2>
-          <p className="text-caffeine-subtle text-sm sm:text-base mt-4 leading-relaxed">
+          <p className="text-caffeine-subtle text-xs sm:text-base mt-3 sm:mt-4 leading-relaxed">
             Nous transformons chaque événement en une expérience gustative et visuelle inoubliable grâce à l&apos;exigence artisanale française.
           </p>
         </div>
 
         {/* 4 Feature Pillars Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {FEATURES.map((feature, idx) => {
             const Icon = feature.icon;
             return (
               <div
                 key={idx}
-                className="p-8 rounded-3xl bg-white border border-caffeine-cardBorder hover:border-caffeine-gold/60 transition-all duration-300 hover:shadow-[0_16px_36px_rgba(180,130,80,0.14)] shadow-[0_4px_20px_rgba(180,130,80,0.07)] group flex flex-col justify-between"
+                className="p-5 sm:p-8 rounded-2xl sm:rounded-3xl bg-white border border-caffeine-cardBorder hover:border-caffeine-gold/60 transition-all duration-300 hover:shadow-[0_16px_36px_rgba(180,130,80,0.14)] shadow-[0_4px_20px_rgba(180,130,80,0.07)] group flex flex-col justify-between"
               >
                 <div>
                   {/* Icon Badge */}
