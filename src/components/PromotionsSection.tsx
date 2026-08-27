@@ -92,80 +92,80 @@ export const PromotionsSection = () => {
         </div>
 
         {/* Promo Code Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10 sm:mb-12">
           
-          <div className="p-5 rounded-2xl bg-white border border-caffeine-gold/40 shadow-[0_6px_22px_rgba(180,130,80,0.09)] flex items-center justify-between">
+          <div className="p-4 sm:p-5 rounded-2xl bg-white border border-caffeine-gold/40 shadow-[0_6px_22px_rgba(180,130,80,0.09)] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
               <span className="text-[10px] uppercase font-bold text-caffeine-gold tracking-wider block">
                 Nouveau Client
               </span>
-              <h3 className="text-lg font-black text-caffeine-cream font-display">-20% Première Commande</h3>
+              <h3 className="text-base sm:text-lg font-black text-caffeine-cream font-display">-20% Première Commande</h3>
               <p className="text-[11px] text-caffeine-subtle mt-0.5">Dès 25 000 FCFA d&apos;achat</p>
             </div>
             <button
               onClick={() => handleCopyCode('GOURMAND20')}
-              className="px-3 py-2 rounded-xl bg-caffeine-gold/15 border border-caffeine-gold/40 hover:bg-caffeine-gold hover:text-white text-caffeine-gold text-xs font-black transition-all flex items-center gap-1.5 shadow-sm"
+              className="px-3 py-2 rounded-xl bg-caffeine-gold/15 border border-caffeine-gold/40 hover:bg-caffeine-gold hover:text-white text-caffeine-gold text-xs font-black transition-all flex items-center justify-center gap-1.5 shadow-sm shrink-0 self-start sm:self-auto"
             >
               {copiedCode === 'GOURMAND20' ? (
                 <>
-                  <Check className="w-3.5 h-3.5 text-green-600" />
+                  <Check className="w-3.5 h-3.5 text-green-600 shrink-0" />
                   <span>Copié !</span>
                 </>
               ) : (
                 <>
-                  <Copy className="w-3.5 h-3.5" />
+                  <Copy className="w-3.5 h-3.5 shrink-0" />
                   <span>GOURMAND20</span>
                 </>
               )}
             </button>
           </div>
 
-          <div className="p-5 rounded-2xl bg-white border border-caffeine-cardBorder shadow-[0_6px_22px_rgba(180,130,80,0.07)] flex items-center justify-between">
+          <div className="p-4 sm:p-5 rounded-2xl bg-white border border-caffeine-cardBorder shadow-[0_6px_22px_rgba(180,130,80,0.07)] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
               <span className="text-[10px] uppercase font-bold text-caffeine-gold tracking-wider block">
                 Spécial Fête
               </span>
-              <h3 className="text-lg font-black text-caffeine-cream font-display">-15% Anniversaire</h3>
+              <h3 className="text-base sm:text-lg font-black text-caffeine-cream font-display">-15% Anniversaire</h3>
               <p className="text-[11px] text-caffeine-subtle mt-0.5">Dès 20 000 FCFA d&apos;achat</p>
             </div>
             <button
               onClick={() => handleCopyCode('ANNIVERSAIRE15')}
-              className="px-3 py-2 rounded-xl bg-caffeine-surface border border-caffeine-cardBorder hover:border-caffeine-gold hover:text-caffeine-gold text-caffeine-cream text-xs font-black transition-all flex items-center gap-1.5 shadow-sm"
+              className="px-3 py-2 rounded-xl bg-caffeine-surface border border-caffeine-cardBorder hover:border-caffeine-gold hover:text-caffeine-gold text-caffeine-cream text-xs font-black transition-all flex items-center justify-center gap-1.5 shadow-sm shrink-0 self-start sm:self-auto"
             >
               {copiedCode === 'ANNIVERSAIRE15' ? (
                 <>
-                  <Check className="w-3.5 h-3.5 text-green-600" />
+                  <Check className="w-3.5 h-3.5 text-green-600 shrink-0" />
                   <span>Copié !</span>
                 </>
               ) : (
                 <>
-                  <Copy className="w-3.5 h-3.5 text-caffeine-gold" />
+                  <Copy className="w-3.5 h-3.5 text-caffeine-gold shrink-0" />
                   <span>ANNIVERSAIRE15</span>
                 </>
               )}
             </button>
           </div>
 
-          <div className="p-5 rounded-2xl bg-white border border-caffeine-cardBorder shadow-[0_6px_22px_rgba(180,130,80,0.07)] flex items-center justify-between">
+          <div className="p-4 sm:p-5 rounded-2xl bg-white border border-caffeine-cardBorder shadow-[0_6px_22px_rgba(180,130,80,0.07)] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
               <span className="text-[10px] uppercase font-bold text-caffeine-gold tracking-wider block">
                 Grand Événement
               </span>
-              <h3 className="text-lg font-black text-caffeine-cream font-display">-10% Mariage & Prestige</h3>
+              <h3 className="text-base sm:text-lg font-black text-caffeine-cream font-display">-10% Mariage & Prestige</h3>
               <p className="text-[11px] text-caffeine-subtle mt-0.5">Dès 70 000 FCFA d&apos;achat</p>
             </div>
             <button
               onClick={() => handleCopyCode('MARIAGE10')}
-              className="px-3 py-2 rounded-xl bg-caffeine-surface border border-caffeine-cardBorder hover:border-caffeine-gold hover:text-caffeine-gold text-caffeine-cream text-xs font-black transition-all flex items-center gap-1.5 shadow-sm"
+              className="px-3 py-2 rounded-xl bg-caffeine-surface border border-caffeine-cardBorder hover:border-caffeine-gold hover:text-caffeine-gold text-caffeine-cream text-xs font-black transition-all flex items-center justify-center gap-1.5 shadow-sm shrink-0 self-start sm:self-auto"
             >
               {copiedCode === 'MARIAGE10' ? (
                 <>
-                  <Check className="w-3.5 h-3.5 text-green-600" />
+                  <Check className="w-3.5 h-3.5 text-green-600 shrink-0" />
                   <span>Copié !</span>
                 </>
               ) : (
                 <>
-                  <Copy className="w-3.5 h-3.5 text-caffeine-gold" />
+                  <Copy className="w-3.5 h-3.5 text-caffeine-gold shrink-0" />
                   <span>MARIAGE10</span>
                 </>
               )}
